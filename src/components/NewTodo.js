@@ -7,7 +7,7 @@ const NewTodo = (props) => {
     const submitTodoHandler = (e) => {
         e.preventDefault();
         props.setTodos([
-            ...props.todos, {text: props.newTask,}
+            ...props.todos, {text: props.newTask, id: Math.floor(Math.random() * Date.now()), }
         ]);
         props.setNewTask("");
     };
