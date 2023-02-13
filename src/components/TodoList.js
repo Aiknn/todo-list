@@ -3,7 +3,7 @@ import Todo from "./Todo";
 
 const TodoList = (props) => {
     return(
-        <ul>
+        <ul className="todo-list">
         {props.todos.map(todo => (
             <Todo text={todo.text} key={todo.id}/>
         ))}

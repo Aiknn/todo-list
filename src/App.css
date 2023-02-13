@@ -1,3 +1,6 @@
+.header {
+    margin-bottom: 80px;
+}
 h1{
     font-size: 34px;
     font-weight: 700;
@@ -38,6 +41,27 @@ textarea{
     border: none;
     border-radius: 100px;
     margin-top: 10px;
+}
+.switcher-btn{
+    width: 86px;
+    background-color: rgba(8, 30, 52, 0.05);
+    padding-top: 11px;
+    padding-bottom: 11px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #081E34;
+    border: none;
+    border-radius: 100px;
+    margin-right: 16px;
+    margin-top: 20px;
+}
+.switcher-btn:hover, .active{
+    background-color: rgba(8, 30, 52, 0.42);
+    color: white;
+    font-weight: 700;
+}
+.todo-list {
+    list-style: none;
 }
 footer{
     margin-top: 350px;
