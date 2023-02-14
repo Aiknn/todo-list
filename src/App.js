@@ -7,10 +7,12 @@ import TodoSwitcher from './components/TodoSwitcher';
 import Header from './components/Header';
 
 function App() {
-  const [newTask, setNewTask] = useState("");
   const [todos, setTodos] = useState([]);
   const [filterStatus, setFilterStatus] = useState('uncompleted');
   const [filteredTodos, setFilteredTodos] = useState([]);
+  const newTodoHandler = (todo) => {
+    setTodos(prevState=>([...prevState, todo]));
+  }
   useEffect(() => {
     switch(filterStatus){
       case 'uncompleted':
@@ -27,9 +29,9 @@ function App() {
   return (
     <div className="App container">
         <Header />
-        <NewTodo newTask={newTask} setNewTask={setNewTask} todos={todos} setTodos={setTodos}/>
+        <NewTodo onSubmit={newTodoHandler}/>
         <TodoSwitcher filterStatus={filterStatus} setFilterStatus={setFilterStatus}/>
-        <TodoList todos={todos}/>
+        <TodoList todos={todos} filteredTodos={filteredTodos}/>
         <Footer />
     </div>
   );

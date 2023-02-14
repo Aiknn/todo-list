@@ -42,6 +42,9 @@ textarea{
     border-radius: 100px;
     margin-top: 10px;
 }
+.new-task-btn:hover{
+    background: rgba(8, 30, 52, 0.42);
+}
 .switcher-btn{
     width: 86px;
     background-color: rgba(8, 30, 52, 0.05);
