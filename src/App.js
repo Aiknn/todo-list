@@ -12,6 +12,7 @@ function App() {
   const [filteredTodos, setFilteredTodos] = useState([]);
   const newTodoHandler = (todo) => {
     setTodos(prevState=>([...prevState, todo]));
+    setFilterStatus('uncompleted');
   }
   useEffect(() => {
     switch(filterStatus){

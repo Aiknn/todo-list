@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const NewTodo = (props) => {
     const [data, setData] = useState("");
-
+    const [isActive, setActive] = useState(false);
     const newTodoHandler = (e) => {
         setData(e.target.value);
     };
@@ -13,16 +13,19 @@ const NewTodo = (props) => {
         });
         setData("");
     };
+    const toggleClass = () => {
+        setActive(!isActive);
+    }
     return(
         <div className="new-task-wrapper">
-            <form className="new-task">
+            <form className={`new-task ${isActive ? "hidden" : ""}`}>
                 <p className="new-task-desc"><label htmlFor="new-task">Add New To Do</label></p>
                 <textarea onChange={newTodoHandler} value={data} name="Text1" cols="22" rows="5" placeholder="Your text"></textarea>
                 <br />
                 <button onClick={submitTodoHandler} className="new-task-btn">Add</button>
             </form>
-            <div className="plus-btn">
-                <i className="fas fa-plus-circle fa-3x"></i>
+            <div className="plus-btn" onClick={toggleClass}>
+                <i className="fas fa-plus-circle fa-3x fa-flag"></i>
             </div>
         </div>
         
