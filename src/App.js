@@ -32,7 +32,7 @@ function App() {
         <Header />
         <NewTodo onSubmit={newTodoHandler}/>
         <TodoSwitcher filterStatus={filterStatus} setFilterStatus={setFilterStatus}/>
-        <TodoList todos={todos} filteredTodos={filteredTodos}/>
+        <TodoList filteredTodos={filteredTodos} filterStatus={filterStatus}/>
         <Footer />
     </div>
   );
