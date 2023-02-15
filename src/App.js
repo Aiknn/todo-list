@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App container">
         <Header />
-        <NewTodo onSubmit={newTodoHandler}/>
+        <NewTodo newTodoHandler={newTodoHandler}/>
         <TodoSwitcher filterStatus={filterStatus} setFilterStatus={setFilterStatus}/>
         <TodoList filteredTodos={filteredTodos} filterStatus={filterStatus}/>
         <Footer />
