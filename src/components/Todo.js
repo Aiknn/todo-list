@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Todo = (props) => {
     
     const onChangeHandler = (e) => {
         if(e.target.checked) {
-            props.updateTodo(props.obj.id)    
+            props.updateTodo(props.obj.id, 'makeDone');    
         } 
+        else{
+            props.updateTodo(props.obj.id, 'makeUndone');
+        }
     }
 
     return(

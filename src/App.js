@@ -14,10 +14,15 @@ function App() {
     setTodos(prevState=>([...prevState, todo]));
     setFilterStatus('uncompleted');
   }
-  const updateTodoHandler = (id) => {
+  const updateTodoHandler = (id, target) => {
     setTodos(todos.map(todo => {
       if(todo.id === id) {
-        return {...todo, status: 'completed'};
+        if(target === 'makeDone'){
+          return {...todo, status: 'completed'};
+        }
+        else{
+          return {...todo, status: 'uncompleted'};
+        }
       } else {
         return todo;
       }

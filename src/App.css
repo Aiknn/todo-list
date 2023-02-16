@@ -96,10 +96,15 @@ hr{
 }
 .crossed{
     text-decoration: line-through;
+    color: gray;
+}
+input[type='checkbox'] {
+    margin-right: 8px;
+    accent-color: #712FFF;
 }
 .vert-dots{
     font-weight: 900;
-    font-size: 18px;
+    font-size: 16px;
     color: grey;
 }
 .vert-dots-btn{
