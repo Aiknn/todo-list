@@ -88,9 +88,26 @@ hr{
 }
 .todo-list {
     list-style: none;
+    padding: 0;
+}
+.todo-item{
+    display: flex;
+    margin-top: 10px;
+}
+.crossed{
+    text-decoration: line-through;
+}
+.vert-dots{
+    font-weight: 900;
+    font-size: 18px;
+    color: grey;
+}
+.vert-dots-btn{
+    border: none;
+    margin-right: 5px;
 }
 footer{
-    margin-top: 350px;
+    margin-top: 300px;
     display: flex;
     justify-content: space-between;
 }

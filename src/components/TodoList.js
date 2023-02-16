@@ -13,7 +13,7 @@ const TodoList = (props) => {
             <hr />
             <ul className="todo-list">
                 {props.filteredTodos.map(todo => (
-                    <Todo text={todo.text} key={todo.id}/>
+                    <Todo obj={todo} key={todo.id} updateTodo={props.updateTodo}/>
                 ))}
             </ul>
         </div>

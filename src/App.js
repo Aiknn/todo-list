@@ -14,6 +14,16 @@ function App() {
     setTodos(prevState=>([...prevState, todo]));
     setFilterStatus('uncompleted');
   }
+  const updateTodoHandler = (id) => {
+    setTodos(todos.map(todo => {
+      if(todo.id === id) {
+        return {...todo, status: 'completed'};
+      } else {
+        return todo;
+      }
+    }));
+  }
+
   useEffect(() => {
     switch(filterStatus){
       case 'uncompleted':
@@ -32,7 +42,7 @@ function App() {
         <Header />
         <NewTodo newTodoHandler={newTodoHandler}/>
         <TodoSwitcher filterStatus={filterStatus} setFilterStatus={setFilterStatus}/>
-        <TodoList filteredTodos={filteredTodos} filterStatus={filterStatus}/>
+        <TodoList filteredTodos={filteredTodos} filterStatus={filterStatus} updateTodo={updateTodoHandler}/>
         <Footer />
     </div>
   );

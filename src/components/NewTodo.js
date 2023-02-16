@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const NewTodo = (props) => {
     const [data, setData] = useState("");
-    const [isActive, setActive] = useState(false);
+    const [isActive, setActive] = useState(true);
     const newTextHandler = (e) => {
         setData(e.target.value);
     };
