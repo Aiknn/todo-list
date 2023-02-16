@@ -1,30 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Todo = (props) => {
-    // const deleteHandler = () => {
-    //     props.setTodos(props.todos.filter((el) => el.id !== props.todo.id));
-    // };
-    // const completedHandler = () => {
-    //     props.setTodos(props.todos.map((item) => {
-    //         if(item.id === props.todo.id){
-    //             return {
-    //                 ...item, completed: !item.completed,
-    //             };
-    //         }
-    //         return item;
-    //     }));
-    // };
+    
+    const onChangeHandler = (e) => {
+        if(e.target.checked) {
+            props.updateTodo(props.obj.id)    
+        } 
+    }
+
     return(
-        <li>{props.text}</li>
-        // <div className="todo">
-        //     <li className={`todo-item ${props.todo.completed ? "completed" : ""}`}>{props.text}</li>
-        //     <button onClick={completedHandler} className="complete-btn">
-        //         <i className="fas fa-check"></i>
-        //     </button>
-        //     <button className="trash-btn" onClick={deleteHandler}>
-        //         <i className="fas fa-trash"></i>
-        //     </button>
-        // </div>
+        <li className="todo-item">
+            <button className="vert-dots-btn"><span className="vert-dots">&#8942;</span></button>
+
+            <input type="checkbox" checked={props.obj.status==="completed"} onChange={onChangeHandler}/>
+            
+            <span className={`${props.obj.status==="completed" ? "crossed" : ""}`}>{props.obj.text}</span>
+        </li>
+            
     )
 };
 
