@@ -20,10 +20,14 @@ function App() {
         if(target === 'makeDone'){
           return {...todo, status: 'completed'};
         }
-        else{
+        else if(target === 'makeUndone'){
           return {...todo, status: 'uncompleted'};
         }
-      } else {
+        else {
+          return {...todo, status: 'deleted'};
+        }
+      } 
+      else {
         return todo;
       }
     }));
