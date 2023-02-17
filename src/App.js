@@ -32,6 +32,9 @@ function App() {
       }
     }));
   }
+  const deleteForeverHandler = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id));
+  };
 
   useEffect(() => {
     switch(filterStatus){
@@ -51,7 +54,7 @@ function App() {
         <Header />
         <NewTodo newTodoHandler={newTodoHandler}/>
         <TodoSwitcher filterStatus={filterStatus} setFilterStatus={setFilterStatus}/>
-        <TodoList filteredTodos={filteredTodos} filterStatus={filterStatus} updateTodo={updateTodoHandler}/>
+        <TodoList filteredTodos={filteredTodos} filterStatus={filterStatus} updateTodo={updateTodoHandler} deleteForeverHandler={deleteForeverHandler}/>
         <Footer />
     </div>
   );
